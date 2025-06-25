@@ -2,7 +2,6 @@
 import { Instagram, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const location = useLocation();
@@ -63,12 +62,10 @@ const Navigation = () => {
               <Instagram size={18} />
               <span className="hidden lg:inline">Instagram</span>
             </a>
-            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-3">
-            <ThemeToggle />
+          <div className="md:hidden">
             <button
               className="text-gray-300 hover:text-white transition-colors duration-200"
               onClick={toggleMobileMenu}
