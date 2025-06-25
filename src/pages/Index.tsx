@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Instagram } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import PortfolioGrid from '../components/PortfolioGrid';
 import Hero from '../components/Hero';
@@ -8,7 +9,7 @@ const Index = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   return (
-    <div className="min-h-screen bg-black text-white dark:bg-black dark:text-white bg-white text-black">
+    <div className="min-h-screen bg-black text-white">
       <Navigation />
       <main className="w-full">
         <Hero />

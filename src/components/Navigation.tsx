@@ -16,7 +16,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800 dark:bg-black/90 dark:border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <Link 
@@ -65,15 +65,13 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-              onClick={toggleMobileMenu}
-              aria-label="Toggle mobile menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button
+            className="md:hidden text-gray-300 hover:text-white transition-colors duration-200"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
