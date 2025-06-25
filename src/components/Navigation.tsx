@@ -2,6 +2,7 @@
 import { Instagram, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800 dark:bg-black/90 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <Link 
@@ -62,16 +63,20 @@ const Navigation = () => {
               <Instagram size={18} />
               <span className="hidden lg:inline">Instagram</span>
             </a>
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-gray-300 hover:text-white transition-colors duration-200"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="md:hidden flex items-center space-x-3">
+            <ThemeToggle />
+            <button
+              className="text-gray-300 hover:text-white transition-colors duration-200"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
